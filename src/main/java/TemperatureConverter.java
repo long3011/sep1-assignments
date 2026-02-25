@@ -1,4 +1,17 @@
 public class TemperatureConverter {
+
+    static void main(String[] args) {
+        double celsius = 25.0;
+        double fahrenheit = celsiusToFahrenheit(celsius);
+        double kelvin = fahrenheitToCelsius(fahrenheit) + 273.15;
+
+        System.out.println(celsius + " °C is " + fahrenheit + " °F");
+        System.out.println(fahrenheit + " °F is " + fahrenheitToCelsius(fahrenheit) + " °C");
+        System.out.println(kelvin + " K is " + kelvinToCelsius(kelvin) + " °C");
+
+        double extremeTemp = -45.0;
+        System.out.println(extremeTemp + " °C is an extreme temperature: " + isExtremeTemperature(extremeTemp));
+    }
     public static double celsiusToFahrenheit(double celsius) {
         return (celsius * 9/5) + 32;
     }
