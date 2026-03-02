@@ -1,16 +1,22 @@
+import java.util.Scanner;
+
 public class TemperatureConverter {
 
     static void main(String[] args) {
-        double celsius = 25.0;
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter temperature in Celsius: ");
+        double celsius = input.nextDouble();
         double fahrenheit = celsiusToFahrenheit(celsius);
-        double kelvin = fahrenheitToCelsius(fahrenheit) + 273.15;
-
-        System.out.println(celsius + " °C is " + fahrenheit + " °F");
-        System.out.println(fahrenheit + " °F is " + fahrenheitToCelsius(fahrenheit) + " °C");
-        System.out.println(kelvin + " K is " + kelvinToCelsius(kelvin) + " °C");
-
-        double extremeTemp = -45.0;
-        System.out.println(extremeTemp + " °C is an extreme temperature: " + isExtremeTemperature(extremeTemp));
+        System.out.printf("%.2f Celsius is %.2f Fahrenheit%n", celsius, fahrenheit);
+        input.close();
+        System.out.println("Enter temperature in Fahrenheit: ");
+        double fahrenheitInput = input.nextDouble();
+        double celsiusOutput = fahrenheitToCelsius(fahrenheitInput);
+        System.out.printf("%.2f Fahrenheit is %.2f Celsius%n", fahrenheitInput,celsiusOutput);
+        System.out.println("Enter temperature in Kelvin: ");
+        double kelvinInput = input.nextDouble();
+        double celsiusFromKelvin = kelvinToCelsius(kelvinInput);
+        System.out.printf("%.2f Kelvin is %.2f Celsius%n", kelvinInput, celsiusFromKelvin);
     }
     public static double celsiusToFahrenheit(double celsius) {
         return (celsius * 9/5) + 32;
