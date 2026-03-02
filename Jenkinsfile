@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/long3011/sep1-assignments.git', branch: 'main'
+                git branch: 'main', url: 'https://github.com/long3011/sep1-assignments'
             }
         }
         stage('Build') {
